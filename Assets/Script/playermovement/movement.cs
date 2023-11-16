@@ -13,7 +13,7 @@ public class movement : MonoBehaviour
     public bool isGround, isJump;
     bool jumpPressed;
     int jumpCount;
-
+    //´ú¸Õ´ú¸Õ
     // Start is called before the first frame update
     void Start()
     {
