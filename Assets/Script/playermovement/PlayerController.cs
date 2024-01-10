@@ -1,4 +1,5 @@
-    using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing.Text;
 using JetBrains.Annotations;
@@ -12,11 +13,49 @@ public class PlayerController : MonoBehaviour
     public WarriorlegendplayerControl inputControl;
 
     private Rigidbody2D rb;
+    private CapsuleCollider2D coll;
+    private Animator anim;
+    public float speed, jumpForce;
+    public Transform groundCheck;
+    public LayerMask ground;
+    public bool isGround, isJump;
+    bool jumpPressed;
+    int jumpCount;
     public Vector2 inputDirection;
     public float Speed;
     private void Awake() {
-    inputControl = new WarriorlegendplayerControl();    
-    rb = GetComponent<Rigidbody2D>();
+        inputControl = new WarriorlegendplayerControl();    
+
+        inputControl.GamePlay.Jump.started += Jump;
+
+        rb= GetComponent<Rigidbody2D>();
+        coll = GetComponent<CapsuleCollider2D>();
+        anim = GetComponent<Animator>();
+    }
+
+    private void Jump(InputAction.CallbackContext context)
+    {
+        throw new NotImplementedException();
+      /*  if(isGround) {
+            jumpCount = 2;
+            isJump = false;
+            
+        }
+        if(jumpPressed&& isGround)
+        {
+            isJump= true;
+            rb.velocity = new Vector2(rb.velocity.x,jumpForce);
+            jumpCount--;
+            jumpPressed = false;
+        }
+        else if (jumpPressed&& jumpCount>0&& isJump)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+         //   anim.StopPlayback();
+         //   anim.Play("jump");
+            jumpCount--;
+            jumpPressed=false;
+        }*/
     }
 
     private void OnEnable() {
