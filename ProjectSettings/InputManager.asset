@@ -87,7 +87,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Jump
-    descriptiveName: Jump
+    descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: space
@@ -485,4 +485,3 @@ InputManager:
     type: 2
     axis: 5
     joyNum: 0
-  m_UsePhysicalKeys: 0
