@@ -13,7 +13,7 @@ public class movement : MonoBehaviour
     public bool isGround, isJump;
     bool jumpPressed;
     int jumpCount;
-    //´ú¸Õ´ú¸Õ
+    //ï¿½ï¿½ï¿½Õ´ï¿½ï¿½ï¿½
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +52,7 @@ public class movement : MonoBehaviour
         if(isGround) {
             jumpCount = 2;
             isJump = false;
+            
         }
         if(jumpPressed&& isGround)
         {
@@ -63,6 +64,8 @@ public class movement : MonoBehaviour
         else if (jumpPressed&& jumpCount>0&& isJump)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+         //   anim.StopPlayback();
+         //   anim.Play("jump");
             jumpCount--;
             jumpPressed=false;
         }
